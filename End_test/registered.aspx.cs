@@ -37,7 +37,7 @@ public partial class registered : System.Web.UI.Page
         }
         else
         {
-            cmd.ExecuteNonQuery(); //从数据库中读取数据
+            cmd.ExecuteNonQuery(); //在数据库中执行语句
             Session["username"] = uname.Text.Trim(); //将用户名保存到SESSION中
             Response.Redirect("surf.aspx");//成功后页面跳转
         }
