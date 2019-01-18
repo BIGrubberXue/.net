@@ -11,6 +11,7 @@ public partial class book_data_book_id_com : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+<<<<<<< HEAD
         if (!IsPostBack) {
             if (Session["username"] == null)
             {
@@ -42,6 +43,25 @@ public partial class book_data_book_id_com : System.Web.UI.Page
             Response.Write("</section>");
             con.Close();
         }
+=======
+        Response.Clear();
+        string conn = WebConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+        SqlConnection con = new SqlConnection(conn);
+        //打开数据库连接
+        con.Open();
+        string str = "select * from book_com where book_id = '"+Request.QueryString["book_id"]+"'";    //SQL语句将前台中TextBox中的存到数据库的字段中       
+        SqlCommand cmd = new SqlCommand(str, con);//SqlCommand对象允许你指定在数据库上执行的操作的类型。
+        SqlDataReader dr = cmd.ExecuteReader();//从数据库中读取数据
+        Response.Write("--------------------------------------<br/>");
+        while (dr.Read())
+        {
+            string msg = dr["com"].ToString();
+            Response.Write("username:<br/>"+dr["username"].ToString()+ "<br/>");
+            Response.Write("message:<br/>" + msg+ "<br/>");
+            Response.Write("--------------------------------------<br/>");
+        }
+        con.Close();
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
     }
 
     protected void mesg_c_Click(object sender, EventArgs e)
@@ -51,7 +71,15 @@ public partial class book_data_book_id_com : System.Web.UI.Page
         SqlConnection con = new SqlConnection(conn);
         //打开数据库连接
         con.Open();
+<<<<<<< HEAD
         string str = "insert into book_com values('" + Request.QueryString["book_id"] + "','"+mesg_ch.Text.Trim()+"','"+ Session["username"]+ "');";
+=======
+        string str_num = "select count(*) from book_com";    //SQL语句将前台中TextBox中的存到数据库的字段中    
+        SqlCommand cmd = new SqlCommand(str_num, con);//SqlCommand对象允许你指定在数据库上执行的操作的类型。
+        int num_keep = (int)cmd.ExecuteScalar();
+        num_keep++;
+        string str = "insert into book_com values('"+ num_keep + "','" + Request.QueryString["book_id"] + "','"+mesg_ch.Text.Trim()+"','"+ Session["username"]+ "');";
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
         SqlCommand cmd1 = new SqlCommand(str, con);
         SqlDataReader dr = cmd1.ExecuteReader();//从数据库中读取数据
         if(dr.Read())
@@ -62,9 +90,12 @@ public partial class book_data_book_id_com : System.Web.UI.Page
         Response.Redirect(Request.Url.ToString());
     }
 
+<<<<<<< HEAD
 
     protected void return_Click(object sender, EventArgs e)
     {
         Response.Redirect("picture_"+ Request.QueryString["book_id"] + ".aspx");
     }
+=======
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
 }

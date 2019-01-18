@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+<<<<<<< HEAD
     <link href="../css/self-style.css" rel="stylesheet" />
     <link href="../css/button_broder.css" rel="stylesheet" />
     <style type="text/css">
@@ -42,6 +43,16 @@
 
         <div class="mid-style">
             <asp:Button ID="Button1" runat="server" Text="返回" OnClick="Button1_Click" CssClass="auto-style1" Height="40px" Width="190px" />
+=======
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width:300px;margin: 10px auto;">
+            <asp:GridView ID="GridView1" runat="server" ></asp:GridView>
+        </div>
+        <div style="width:300px;margin: 10px auto;">
+            <asp:Button ID="Button1" runat="server" Text="返回" OnClick="Button1_Click" />
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
         </div>
     </form>
 </body>

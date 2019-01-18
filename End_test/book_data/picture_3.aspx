@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+<<<<<<< HEAD
     <link href="../css/self-style.css" rel="stylesheet" />
 </head>
 <body>
@@ -13,6 +14,16 @@
         <a>
         <div style="width:40%;display:inline-block;Float:left;height:475px">
             <asp:Image ID="Image1" runat="server" Height="448px" Width="448px"  ImageUrl="~/picture_keep/picture3.JPG" style="margin-left: 47px" />
+=======
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <a>
+        <div style="width:33%;display: inline-block;Float:left">
+            <asp:Image ID="Image1" runat="server" Height="448px" Width="448px"  ImageUrl="~/picture_keep/picture3.JPG" />
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
         </div>
         </a>
         <div style="width:44%; height:285px; margin-left:10px; display:inline-block">
@@ -24,6 +35,7 @@
                 </p>
             </a>
         </div>
+<<<<<<< HEAD
        <div style="height:auto">
             <table class="self-style3"><tr><td class="self-style1"><span class="self-style4">网站价格:</span></td>
                 </tr>
@@ -41,6 +53,21 @@
                 style="border-radius:15px; border-width: 0;width:150px;height:70px;"/>
                 <asp:Button Text="返回浏览" runat="server" OnClick= "button3_Click" ID="button3" 
                 style="border-radius:15px; border-width: 0;width:150px;height:70px;"/>
+=======
+        <div style="background-color:grey;width:627px; margin-left: 455px;">
+            <a>
+                <p style="font-size:20px">网站价格: </p>
+                <p style="font-size:25px;color:red">¥67</p>
+            </a>
+
+        </div>
+        <div>
+            <a>
+                <asp:Button Text="订购此书" runat="server" OnClick="button1_Click" ID="button1" 
+                style="background-color:yellow;border-radius:15px; border-width: 0;width:150px;height:70px;"/>
+                 <asp:Button Text="评论次数" runat="server" OnClick="button2_Click" ID="button2" 
+                style="border-radius:15px; border-width: 0;width:150px;height:70px;"/>
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
             </a>
         </div>
 

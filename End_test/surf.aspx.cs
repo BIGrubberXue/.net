@@ -14,6 +14,7 @@ public partial class surf : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack) {
+<<<<<<< HEAD
             if (Session["Username"] != null)
             {
                 string conn = WebConfigurationManager.ConnectionStrings["conn"].ConnectionString;
@@ -45,6 +46,33 @@ public partial class surf : System.Web.UI.Page
             Image0.ImageUrl = pic[0];
             Image1.ImageUrl = pic[1];
             Image2.ImageUrl = pic[2];
+=======
+        if(Session["Username"] != null)
+        {
+            string conn = WebConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            SqlConnection con = new SqlConnection(conn);
+            //打开数据库连接
+            con.Open();
+            string str = "select * from user_data where username='" + Session["Username"].ToString()+ "'";
+            SqlCommand cmd = new SqlCommand(str, con);//SqlCommand对象允许你指定在数据库上执行的操作的类型。
+            SqlDataReader dr = cmd.ExecuteReader();//从数据库中读取数据
+            dr.Read();
+            int sex_num = int.Parse(dr["sex"].ToString());
+            string sex;
+            if (sex_num==0) {
+                sex = "先生";
+            }
+            else {
+                sex = "小姐";
+            }
+            Response.Write("欢迎您，"+ Session["Username"]+""+sex);
+            login_registered.Visible = false  ;
+        }
+        
+        Image0.ImageUrl = pic[0];
+        Image1.ImageUrl = pic[1];
+        Image2.ImageUrl = pic[2];
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
         }
     }
     protected void Button1_Click(object sender, EventArgs e)
@@ -109,6 +137,7 @@ public partial class surf : System.Web.UI.Page
 
     protected void Button4_Click(object sender, EventArgs e)
     {
+<<<<<<< HEAD
         if (Session["Username"] == null)
         {
             Response.Write("<script>alert('未登陆账号')</script>");
@@ -169,5 +198,8 @@ public partial class surf : System.Web.UI.Page
     {
         Session.Clear();
         Response.Redirect(Request.Url.ToString());
+=======
+        Response.Redirect("book_data/b_book_list.aspx");
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
     }
 }

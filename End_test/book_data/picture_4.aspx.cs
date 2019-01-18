@@ -31,6 +31,7 @@ public partial class book_data_picture_4 : System.Web.UI.Page
 
     protected void button2_Click(object sender, EventArgs e)
     {
+<<<<<<< HEAD
         Response.Redirect("book_id_com.aspx?book_id=4");
         
         
@@ -40,4 +41,16 @@ public partial class book_data_picture_4 : System.Web.UI.Page
     {
         Response.Redirect("../surf.aspx");
     }
+=======
+        if (Session["username"] != null)
+        {
+            Response.Redirect("book_id_com.aspx?book_id=4");
+        }
+        else
+        {
+            Response.Write("<script>alert('请先进行注册')</script>");
+        }
+        
+    }
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
 }

@@ -38,11 +38,15 @@ public partial class login : System.Web.UI.Page
 
     protected void register_Click(object sender, EventArgs e)
     {
+<<<<<<< HEAD
         Response.Redirect("registered.aspx");
     }
 
     protected void return_btn_Click(object sender, EventArgs e)
     {
         Response.Redirect("surf.aspx");
+=======
+
+>>>>>>> 0e4ab70293e60bf39dace0390b1f92eebb580049
     }
 }
